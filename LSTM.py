@@ -31,6 +31,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, mean_absolu
 
 ## For IDEs, like PyCharm
 import matplotlib
+print('hello')
 
 full_data = pd.read_csv('brent_daily_prices.csv', parse_dates=['DATE'], index_col='DATE', na_values='.')  # In the original time series, NA values are represented by a period (.)
 data = full_data['DCOILBRENTEU']
@@ -38,7 +39,6 @@ data.rename_axis('date', inplace=True)
 data.rename('brent_crude_oil', inplace=True)
 data.fillna(method='ffill', inplace=True)  # Replace NaN values with the last valid observation.
 data.index = pd.DatetimeIndex(data.index).to_period('B').to_timestamp()  # Sets the frequency for the time series.
-
 # Basic EDA of the data
 print(data.describe())
 print('\n')
