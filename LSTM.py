@@ -31,7 +31,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, mean_absolu
 
 ## For IDEs, like PyCharm
 import matplotlib
-print('hello')
+print('helloasdsad')
 
 full_data = pd.read_csv('brent_daily_prices.csv', parse_dates=['DATE'], index_col='DATE', na_values='.')  # In the original time series, NA values are represented by a period (.)
 data = full_data['DCOILBRENTEU']
